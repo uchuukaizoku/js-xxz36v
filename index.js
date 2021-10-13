@@ -12,12 +12,13 @@ PizzicatoRecorder(Pizzicato);
 
 document.addEventListener('click', () => {
   Pizzicato.Recorder.start({ mute: false });
-  var sound = new Pizzicato.Sound('bird.wav', function (err) {
-    if (err) return console.error(err);
-    sound.play();
-    sound.on('end', function () {
-      Pizzicato.Recorder.stop('wav', handleAudio);
-    });
+
+  var sound = new Pizzicato.Sound({ source: 'wave' });
+  sound.play();
+  sound.stop();
+  // setTimeout(, 5000);
+  sound.on('end', function () {
+    Pizzicato.Recorder.stop('wav', handleAudio);
   });
 });
 
