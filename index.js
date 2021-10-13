@@ -17,7 +17,7 @@ document.addEventListener('click', () => {
   sound.play();
   sound.stop();
   // setTimeout(, 5000);
-  sound.on('end', function () {
+  sound.on('stop', function () {
     Pizzicato.Recorder.stop('wav', handleAudio);
   });
 });
