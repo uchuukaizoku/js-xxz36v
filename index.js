@@ -15,8 +15,10 @@ document.addEventListener('click', () => {
 
   var sound = new Pizzicato.Sound({ source: 'wave' });
   sound.play();
-  sound.stop();
-  // setTimeout(, 5000);
+
+  setTimeout(function () {
+    sound.stop();
+  }, 1000);
   sound.on('stop', function () {
     Pizzicato.Recorder.stop('wav', handleAudio);
   });
