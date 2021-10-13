@@ -14,6 +14,12 @@ document.addEventListener('click', () => {
   Pizzicato.Recorder.start({ mute: false });
 
   var sound = new Pizzicato.Sound({ source: 'wave' });
+  var sound2 = new Pizzicato.Sound(
+    'looperman-l-3531870-0268951-simple-travis-scott-beat.wav',
+    function (err) {
+      sound2.play();
+    }
+  );
   sound.play();
 
   setTimeout(function () {
